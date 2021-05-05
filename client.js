@@ -14,8 +14,11 @@ const connect = function () {
     // code that does something when the connection is first established
     console.log("Successfully connected to game server");
     conn.write("Name: ILY");
+    setInterval(() => {
+      conn.write(/*"Move: up"*/);
+    }, 2000);
   });
-
+  
   conn.on("data", (data) => {
     // code that does something when the connection is first established
     console.log("Server says: ", data);
@@ -23,6 +26,8 @@ const connect = function () {
   
   return conn;
 };
+
+
 
 // conn.on("event name", () => {      -- this "event name" is built-in 
 //   // code that does something
