@@ -12,7 +12,8 @@ const connect = function () {
 
   conn.on("connect", () => {
     // code that does something when the connection is first established
-    console.log("Connection is made with the server");
+    console.log("Successfully connected to game server");
+    conn.write("Name: ILY");
   });
 
   conn.on("data", (data) => {
