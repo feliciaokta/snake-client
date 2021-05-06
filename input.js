@@ -28,8 +28,8 @@ const handleUserInput = function (key) {
   if (key === "d") {
     connection.write("Move: right")
   }
-  if (key === "`") {
-    connection.write("")
+  if (key === "-") {
+    connection.write("Say: welcome to snek")
   }
 };
 
