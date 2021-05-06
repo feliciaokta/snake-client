@@ -14,9 +14,9 @@ const connect = function () {
     // code that does something when the connection is first established
     console.log("Successfully connected to game server");
     conn.write("Name: ILY");
-    setInterval(() => {
-      conn.write(/*"Move: up"*/);
-    }, 2000);
+    // setInterval(() => {
+    //   conn.write("Move: up");   //move up is commented bcs we don't want the snake to move up on program startup
+    // }, 2000);
   });
   
   conn.on("data", (data) => {
@@ -27,6 +27,7 @@ const connect = function () {
   return conn;
 };
 
+module.exports = {connect};
 
 
 // conn.on("event name", () => {      -- this "event name" is built-in 
@@ -41,5 +42,3 @@ const connect = function () {
 - end
 https://nodejs.org/api/net.html#net_class_net_socket
 */
-
-module.exports = connect;
